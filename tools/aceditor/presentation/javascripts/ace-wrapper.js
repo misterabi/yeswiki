@@ -208,6 +208,7 @@ export default class {
   }
 
   insert(text) {
+    
     this.ace.insert(text)
     this.selectCurrentGroupAfterEdit()
   }

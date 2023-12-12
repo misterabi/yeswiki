@@ -371,6 +371,10 @@ return [
 
     // col
     "AB_template_col_size_hint" => "Attention, la somme des largeurs de toutes les colonnes ne devra pas excéder 12 !",
+    //Etherpad
+    "AB_etherpad_label" => "Etherpad",
+    "AB_etherpad_action_label" => "Etherpad",
+
     // button
     "AB_buttons_label" => "Boutons",
     "AB_buttons_action_button_label" => "Bouton",

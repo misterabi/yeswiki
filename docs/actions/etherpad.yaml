@@ -1,0 +1,10 @@
+label: _t(AB_etherpad_label)
+position: 2
+previewHeight: 100px
+actions:
+  properties:
+    text:
+      label: _t(AB_etherpad_action_label)
+      value: pomme
+      default: ""
+      type: text
