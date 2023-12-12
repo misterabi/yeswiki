@@ -9,10 +9,10 @@ use YesWiki\Core\YesWikiHandler;
 
 class IframeHandler extends YesWikiHandler
 {
-    protected $assetsManager ;
-    protected $authController ;
-    protected $entryController ;
-    protected $favoritesManager ;
+    protected $assetsManager;
+    protected $authController;
+    protected $entryController;
+    protected $favoritesManager;
 
     public function run()
     {
@@ -23,8 +23,8 @@ class IframeHandler extends YesWikiHandler
         $output = '';
         if (!$this->wiki->page) {
             echo str_replace(
-                ["{beginLink}","{endLink}"],
-                ["<a href=\"{$this->wiki->href("editiframe")}\">","</a>"],
+                ["{beginLink}", "{endLink}"],
+                ["<a href=\"{$this->wiki->href("editiframe")}\">", "</a>"],
                 _t("NOT_FOUND_PAGE")
             );
         } elseif ($this->wiki->HasAccess("read")) {
@@ -73,10 +73,10 @@ class IframeHandler extends YesWikiHandler
         $output .= '</div><!-- end .container -->' . "\n";
         $this->wiki->AddJavascriptFile('javascripts/vendor/iframe-resizer/iframeResizer.contentWindow.min.js');
 
-        
+
         // on recupere les entetes html mais pas ce qu'il y a dans le body
         $header = explode('<body', $this->wiki->Header());
-        $output = $header[0].$output;
+        $output = $header[0] . $output;
         // on recupere juste les javascripts et la fin des balises body et html
         $output .= preg_replace('/^.+<script/Us', '<script', $this->wiki->Footer());
 
@@ -95,7 +95,7 @@ class IframeHandler extends YesWikiHandler
         $valjson = $this->wiki->page["body"];
         $tab_valeurs = json_decode($valjson, true);
         if (YW_CHARSET != 'UTF-8') {
-            $tab_valeurs = array_map(function($value){
+            $tab_valeurs = array_map(function ($value) {
                 return mb_convert_encoding($value, 'ISO-8859-1', 'UTF-8');
             }, $tab_valeurs);
         }
@@ -122,9 +122,9 @@ class IframeHandler extends YesWikiHandler
             $isUserFavorite = $this->favoritesManager->isUserFavorite($currentuser, $tag);
             // TODO use twig (with other part of this handler also)
             $this->assetsManager->AddJavascriptFile('javascripts/favorites.js');
-            $extraClass = $isUserFavorite ? ' user-favorite' : '' ;
-            $iconClass = $isUserFavorite ? 'fas' : 'far' ;
-            $title = ($isUserFavorite) ? _t('FAVORITES_REMOVE') : _t('FAVORITES_ADD') ;
+            $extraClass = $isUserFavorite ? ' user-favorite' : '';
+            $iconClass = $isUserFavorite ? 'fas' : 'far';
+            $title = ($isUserFavorite) ? _t('FAVORITES_REMOVE') : _t('FAVORITES_ADD');
             // HEREDOC syntax
             $output .= <<<HTML
                 <a href="#"
