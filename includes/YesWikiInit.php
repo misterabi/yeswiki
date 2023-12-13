@@ -209,6 +209,7 @@ class Init
             'mysql_password' => '',
             'table_prefix' => 'yeswiki_',
             'base_url' => computeBaseURL($_rewrite_mode),
+            'etherpad_url' => 'http://127.0.0.1:9001/p/',
             'rewrite_mode' => $_rewrite_mode,
             'meta_keywords' => '',
             'meta_description' => '',
