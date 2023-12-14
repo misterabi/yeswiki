@@ -3,6 +3,7 @@ import textarea from './fields/textarea.js'
 import date from './fields/date.js'
 import image from './fields/image.js'
 import url from './fields/url.js'
+import etherpad from './fields/etherpad.js'
 import file from './fields/file.js'
 import champs_mail from './fields/champs_mail.js'
 import select from './fields/select.js'
@@ -45,7 +46,7 @@ window.formBuilderFields = {
   'checkbox-group': checkbox_group, 'radio-group': radio_group,
   map, tags, labelhtml, titre, bookmarklet, conditionschecking, calc,
   reactions, inscriptionliste, utilisateur_wikini, acls, metadatas,
-  listefichesliees, custom, tabs, tabchange
+  listefichesliees, custom, tabs, tabchange, etherpad
 }
 
 function initializeFormbuilder() {
