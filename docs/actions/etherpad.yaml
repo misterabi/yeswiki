@@ -7,7 +7,7 @@ actions:
     description: _t(AB_buttons_action_button_description)
     properties:
       src:
-        label: _t(AB_buttons_action_button_iframe_src_label)
+        label: _t(AB_etherpad_action_label)
         type: text
         default: ''
         required: true
