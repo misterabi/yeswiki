@@ -11,7 +11,8 @@ actions:
         type: text
         default: ''
         required: true
+      
       url:
         label: _t(AB_etherpad_action_label_url)
+        value: ' '
         type: text
-        default: ''

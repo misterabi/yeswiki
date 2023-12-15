@@ -17,10 +17,10 @@ class IframeAction extends YesWikiAction
         // Utiliser la valeur fusionnée
         $optionnel_url = $this->arguments["optionnel_url"];
         $url = null;
-        if ($optionnel_url != "") {
+        if ($optionnel_url != " ") {
             $url = $optionnel_url;
         } else {
-            $url = $$this->params->get('etherpad_url') . $this->arguments["url"];
+            $url = $this->params->get('etherpad_url') . $this->arguments["url"];
         }
         // return le html
         return "<iframe frameborder=0 src='" . $url . "' height=700 width=100%></iframe>";
