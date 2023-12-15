@@ -18,7 +18,7 @@ class IframeAction extends YesWikiAction
         $optionnel_url = $this->arguments["optionnel_url"];
         $url = null;
         if ($optionnel_url != " ") {
-            $url = $optionnel_url;
+            $url = str_replace(' ', '', $optionnel_url);
         } else {
             $url = $this->params->get('etherpad_url') . $this->arguments["url"];
         }

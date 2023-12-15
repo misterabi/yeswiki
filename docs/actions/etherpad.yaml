@@ -15,4 +15,5 @@ actions:
       url:
         label: _t(AB_etherpad_action_label_url)
         value: ' '
+        default: ''
         type: text
