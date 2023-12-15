@@ -8,16 +8,21 @@ class IframeAction extends YesWikiAction
     {
         return [
             'url' => $arg["src"],
+            'optionnel_url' => $arg["url"],
         ];
     }
 
     public function run()
     {
-
         // Utiliser la valeur fusionnée
-        $etherpadBaseUrl = $this->params->get('etherpad_url');
-
+        $optionnel_url = $this->arguments["optionnel_url"];
+        $url = null;
+        if ($optionnel_url != "") {
+            $url = $optionnel_url;
+        } else {
+            $url = $$this->params->get('etherpad_url') . $this->arguments["url"];
+        }
         // return le html
-        return "<iframe frameborder=0 src='" . $etherpadBaseUrl . $this->arguments["url"] . "' height=700 width=100%></iframe>";
+        return "<iframe frameborder=0 src='" . $url . "' height=700 width=100%></iframe>";
     }
 }
