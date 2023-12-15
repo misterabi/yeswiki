@@ -12,23 +12,19 @@ use Psr\Container\ContainerInterface;
 class EtherpadField extends BazarField
 {
     private $urlField;
-    private $etherpadUrl;
 
     protected const FIELD_URL = 3;
 
     public function __construct(array $values, ContainerInterface $services)
     {
         parent::__construct($values, $services);
-        // Accéder à la valeur de etherpad_url
-        $this->etherpadUrl = $this->getWiki()->config['etherpad_url'];
-        //dump les paramètre du fichier config
-        $this->urlField = $values[self::FIELD_URL] ?? '';
+        $this->urlField =  $this->getWiki()->config['etherpad_url'] . $values[self::FIELD_URL] ?? '';
     }
 
     protected function renderInput($entry)
     {
         if ($this->getWiki()->GetMethod() != 'etherpad') {
-            $iframeUrl =  $this->etherpadUrl . $this->urlField;
+            $iframeUrl = $this->urlField;
             return $this->render("@bazar/inputs/etherpad.twig", [
                 'iframeUrl' => $iframeUrl,
                 "iframeParams" => [
