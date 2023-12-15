@@ -13,6 +13,7 @@ $wakkaConfig = array(
   'mysql_password' => 'root',
   'table_prefix' => 'yeswiki_',
   'base_url' => 'http://127.0.0.1:8000/?',
+  'etherpad_url' => ' http://127.0.0.1:9001/p/',
   'rewrite_mode' => false,
   'meta_keywords' => '',
   'meta_description' => '',
