@@ -1,4 +1,29 @@
-# YesWiki
+
+# DOCUMENTATION DE LA MISE EN PLACE DE ETHERPAD SUR YESWIKI 
+## MISE EN PLACE DE YESWIKI EN LOCAL
+
+Ce guide vous aidera à mettre en place Etherpad localement en utilisant Wamp comme serveur.
+
+### Étape 1 : Fork du Projet
+
+Commencez par forker le projet Etherpad sur Github.
+
+### Étape 2 : Clone du Projet
+
+Clonez le projet forké sur votre machine en utilisant la commande git clone.
+
+### Étape 3 : Installation des dépendances
+npm install
+composer install
+
+## Guide d'installation d'Etherpad
+Clonez le dossier git à l'intérieur d'un dossier nommé '/extension' créé à la racine du projet.
+Exécutez le serveur Etherpad à l'intérieur du dossier du projet.
+src/bin/run.sh ou run.bat sur windows
+
+
+# DOCUMENTATION EXISTNATE DE YESWIKI
+## YesWiki
 
 [YesWiki](https://yeswiki.net) is a Free Software under the AGPL licence, made for creating and managing your website, in a collaborative way.
 
